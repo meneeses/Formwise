@@ -1,0 +1,40 @@
+
+[
+{
+"slug": "cafeteria-boreal",
+"title": "Cafeteria Boreal",
+"category": "Restaurante/Café",
+"price": 199,
+"tags": ["Next.js", "Landing", "Menu"],
+"thumb": "/images/cafe-thumb.jpg",
+"gallery": [
+"/images/cafe-1.jpg",
+"/images/cafe-2.jpg",
+"/images/cafe-3.jpg"
+],
+"description": "Template elegante para cafeterias com cardápio e seção de depoimentos.",
+"recommended": ["barbearia-neon", "academia-wave"]
+},
+{
+"slug": "barbearia-neon",
+"title": "Barbearia Neon",
+"category": "Beleza",
+"price": 179,
+"tags": ["Onepage", "Agendamento"],
+"thumb": "/images/barb-thumb.jpg",
+"gallery": ["/images/barb-1.jpg", "/images/barb-2.jpg"],
+"description": "Visual escuro com destaque para reservas e portfólio.",
+"recommended": ["cafeteria-boreal"]
+},
+{
+"slug": "academia-wave",
+"title": "Academia Wave",
+"category": "Academia",
+"price": 219,
+"tags": ["Landing", "Planos"],
+"thumb": "/images/gym-thumb.jpg",
+"gallery": ["/images/gym-1.jpg"],
+"description": "Foco em planos, professores e avaliações.",
+"recommended": ["cafeteria-boreal"]
+}
+]

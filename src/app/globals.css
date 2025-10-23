@@ -1,26 +1,112 @@
+/* app/globals.css */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* Escalas de cor da marca (claro/escuro) */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* base clara — mais suave */
+    --bg: 248 250 252;      /* #f8fafc (slate-50) */
+    --fg: 20 28 34;         /* #141c22 (suave, ainda AA) */
+    --muted: 100 116 139;   /* slate-500, texto secundário */
+    --brand: 32 159 149;    /* teal-500 levemente dessaturado */
+    --accent: 243 132 51;   /* orange-500 -> um hair menos saturado */
+    --card: 255 255 255;    /* branco puro p/ contraste com fundo */
+    --ring: 94 234 212;     /* teal-300 */
+    --line: 15 23 42;       /* base p/ borda com baixa opacidade */
+  }
+  .dark {
+    --bg: 10 15 18;          /* #0a0f12 */
+    --fg: 224 231 236;       /* texto principal macio */
+    --muted: 156 170 185;    /* secundário um pouco menos frio */
+    --brand: 28 164 154;     /* teal SUAVE (antes era mais forte) */
+    --accent: 246 129 69;    /* laranja levemente dessaturado */
+    --card: 17 24 39;        /* fundo de card */
+    --ring: 40 190 180;      /* ring menos neon */
+    --line: 203 213 225;     /* base p/ borda com baixa opacidade */
+  }
+
+
+html, body { height: 100%; }
+body {
+@apply antialiased;
+font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+@apply antialiased; /* Tailwind v4 mantém @apply */
+background-color: rgb(var(--bg));
+color: rgb(var(--fg));
+scroll-behavior: smooth;
+}
+}
+
+
+@layer utilities {
+  .card {
+    background-color: rgb(var(--card));
+    border: 1px solid rgb(var(--line) / 0.06);
+    border-radius: 1rem; /* 2xl */
+    box-shadow: 0 6px 18px rgba(0,0,0,.04); /* sombra menor */
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+  .card:hover {
+    border-color: rgb(var(--line) / 0.10);
+    box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    transform: translateY(-1px);
+  }
+
+  @layer utilities {
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium;
+    border: 1px solid rgb(var(--line) / 0.10);
+    background: rgb(var(--fg) / 0.03);
+    transition: background-color .18s ease, border-color .18s ease, transform .12s ease;
+    color: inherit;
+  }
+  /* importante: não afetar .btn-primary no hover */
+  .btn:not(.btn-primary):hover {
+    border-color: rgb(var(--line) / 0.16);
+    background: rgb(var(--fg) / 0.05);
+  }
+  .btn:active { transform: scale(.99); }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium;
+    border: 1px solid transparent;
+    background-color: rgb(var(--brand));
+    color: #fff;
+    transition: filter .18s ease, transform .12s ease, box-shadow .18s ease;
+  }
+  .btn-primary:hover {
+    filter: brightness(.96);                /* escurece um tiquinho, mantém contraste */
+    box-shadow: 0 6px 16px rgba(0,0,0,.18); /* dá relevo sutil */
+  }
+  .btn-primary:active { transform: scale(.99); }
+}
+
+  /* links sublinhados suaves no hover */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: -2px;
+    height: 2px; width: 0; background: rgb(var(--accent));
+    transition: width .2s ease;
+  }
+  .link-underline:hover::after { width: 100%; }
+
+  /* grid de fundo mais discreto */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--fg)/0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--fg)/0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: center;
+  }
+  .bg-fade-mask {
+    mask-image: radial-gradient(70% 60% at 50% 40%, black 70%, transparent 100%);
+    -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, black 70%, transparent 100%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
