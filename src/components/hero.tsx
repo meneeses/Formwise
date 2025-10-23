@@ -94,7 +94,7 @@ export default function Hero() {
             transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
             aria-hidden="true"
           >
-            ⬇️
+            👇🏼
           </motion.span>
         </a>
       </motion.div>

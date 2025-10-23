@@ -28,7 +28,7 @@ export default function WhatsAppFAB({
         md:right-6 md:bottom-[calc(env(safe-area-inset-bottom)+24px)]
         transition-transform hover:-translate-y-0.5 active:scale-95
       "
-      style={{ width: size, height: size }} // sem padding/rounded/bg/ring/shadow
+      style={{ width: size, height: size }}
     >
       <Image
         src={iconSrc}
