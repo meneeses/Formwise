@@ -2,9 +2,8 @@ import data from "./template.json" assert { type: "json" };
 
 
 export type Template = {
-short: ReactNode;
 name: string | undefined;
-cover: string | Blob | undefined;
+cover: string | undefined;
 slug: string;
 title: string;
 category: string;
