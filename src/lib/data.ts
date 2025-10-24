@@ -1,4 +1,4 @@
-import data from "@/template.json" assert { type: "json" };
+import data from "./template.json" assert { type: "json" };
 
 
 export type Template = {

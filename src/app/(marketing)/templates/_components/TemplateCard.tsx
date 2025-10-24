@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import Badge from "./badge";
+import Badge from "../../../../components/ui/Badge";
 import type { Template } from "@/lib/data";
 
 export default function TemplateCard({ t }: { t: Template }) {
