@@ -55,6 +55,11 @@ scroll-behavior: smooth;
     transform: translateY(-1px);
   }
 
+  .input {
+  @apply w-full rounded-xl border border-[rgb(var(--line)/0.12)] bg-transparent px-3 py-2 outline-none
+         focus:border-[rgb(var(--line)/0.28)] focus:ring-2 focus:ring-[rgb(var(--accent))]/20 transition;
+  }
+
   @layer utilities {
   .btn {
     @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium;

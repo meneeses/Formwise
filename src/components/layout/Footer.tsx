@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { WhatsIcon } from "../icons/WhatsIcon";
 
 export default function Footer() {
   return (
@@ -40,10 +39,6 @@ export default function Footer() {
                   <circle cx="4" cy="5" r="2" />
                 </svg>
               </Social>
-              <Social href="https://wa.me/5541996727030" label="WhatsApp">
-                {/* whatsapp */}
-                <WhatsIcon className="h-5 w-5" />
-              </Social>
             </div>
           </div>
 
@@ -53,11 +48,11 @@ export default function Footer() {
               <div className="text-[13px] font-medium text-[rgb(var(--muted))]">Páginas</div>
               <ul className="mt-2 space-y-1.5">
                 <li><Link className="opacity-80 hover:opacity-100 transition" href="/">Início</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/como-funciona">Como funciona</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/how-it-works">Como funciona</Link></li>
                 <li><Link className="opacity-80 hover:opacity-100 transition" href="/templates">Templates</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/precos">Preços & Licenças</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/pricing">Preços & Licenças</Link></li>
                 <li><Link className="opacity-80 hover:opacity-100 transition" href="/faq">FAQ</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/contato">Contato</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/contact">Contato</Link></li>
               </ul>
             </div>
 
@@ -65,8 +60,8 @@ export default function Footer() {
               <div className="text-[13px] font-medium text-[rgb(var(--muted))]">Contato</div>
               <ul className="mt-2 space-y-1.5">
                 <li>
-                  <a className="opacity-80 hover:opacity-100 transition" href="mailto:formwisestudo@gmail.com">
-                    formwisestudo@gmail.com
+                  <a className="opacity-80 hover:opacity-100 transition" href="mailto:formwisestudio@gmail.com">
+                    formwisestudio@gmail.com
                   </a>
                 </li>
                 <li>
@@ -81,8 +76,8 @@ export default function Footer() {
             <div className="sm:col-span-2 md:col-span-1">
               <div className="text-[13px] font-medium text-[rgb(var(--muted))]">Legal</div>
               <ul className="mt-2 space-y-1.5">
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/politica-de-privacidade">Política de Privacidade</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/termos-de-uso">Termos de Uso</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/policy">Política de Privacidade</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/terms-of-use">Termos de Uso</Link></li>
               </ul>
             </div>
           </nav>

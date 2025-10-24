@@ -6,12 +6,13 @@ import Footer from "@/components/layout/Footer";
 import ThemeToggle from "@/components/theme-toggle";
 import WhatsAppFAB from "@/components/whatsapp-fab";
 import RouteTransition from "../components/ui/RouteTransition"; // animação entre páginas
-import ViewportVars from "../components/ui/ViewportVars";       // --header-h para centralizar a hero
+import ViewportVars from "../components/ui/ViewportVars"; // --header-h para centralizar a hero
 import { Montserrat } from "next/font/google";
+import WhatsAppMini from "@/components/whatsapp-fab";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400","500","600","700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-sans",
 });
@@ -21,7 +22,11 @@ export const metadata: Metadata = {
   description: "Templates modernos para sites, prontos para personalizar.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   // tema escuro/claro no 1º paint (evita flash)
   const initTheme = `(() => {
     const stored = localStorage.getItem('theme');
@@ -37,7 +42,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <script dangerouslySetInnerHTML={{ __html: initTheme }} />
       </head>
-      <body className={`${montserrat.variable} min-h-dvh selection:bg-teal-300/40 transition-colors duration-300`}>
+      <body
+        className={`${montserrat.variable} min-h-dvh selection:bg-teal-300/40 transition-colors duration-300`}
+      >
         <ViewportVars />
 
         <div className="mx-auto max-w-7xl px-6">
@@ -50,7 +57,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
 
         {/* Botão flutuante do WhatsApp */}
-        <WhatsAppFAB phone="5541996727030" message="Olá! Vim do site Formwise Studio 😊" />
+        <WhatsAppMini
+          phone="5541996727030"
+          defaultMsg="Olá! Quero saber mais sobre os templates."
+          iconSrc="/whatsapp.png" // use o PNG circular que já geramos
+          remember={true}
+        />
       </body>
     </html>
   );
