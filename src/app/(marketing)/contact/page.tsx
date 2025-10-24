@@ -98,7 +98,7 @@ export default function ContactPage() {
             <span className="text-[rgb(var(--muted))]">
               Concordo com a{" "}
               <a
-                href="/politica-de-privacidade"
+                href="/policy"
                 className="underline decoration-[rgb(var(--accent))]/50 underline-offset-2 hover:decoration-[rgb(var(--accent))]"
               >
                 Política de Privacidade
