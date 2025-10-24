@@ -10,7 +10,7 @@ const NAV = [
   { href: "/templates", label: "Templates" },
   { href: "/pricing", label: "Preços & Licenças" },
   { href: "/faq", label: "FAQ" },
-  { href: "/contato", label: "Contato" },
+  { href: "/contact", label: "Contato" },
 ];
 
 export default function Header({ right }: { right?: React.ReactNode }) {
