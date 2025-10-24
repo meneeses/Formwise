@@ -1,4 +1,4 @@
-import TemplateCard from "./template-card";
+import TemplateCard from "@/app/(marketing)/templates/_components/TemplateCard";
 import type { Template } from "@/lib/data";
 
 export default function TemplateGrid({ items }: { items: Template[] }) {
