@@ -2,6 +2,7 @@ import data from "./template.json" assert { type: "json" };
 
 
 export type Template = {
+short: string | undefined;
 name: string | undefined;
 cover: string | undefined;
 slug: string;
