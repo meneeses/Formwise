@@ -1,17 +1,10 @@
 import Link from "next/link";
-import type { Template } from "@/lib/data"; // ajuste se seu tipo estiver em outro lugar
+import type { Template } from "@/lib/data";
 
 export default function TemplateCard({ t }: { t: Template }) {
   return (
     <article className="card overflow-hidden">
-      {/* imagem */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={t.cover}
-        alt={t.name}
-        className="h-40 w-full object-cover"
-      />
-      {/* conteúdo */}
+      <img src={t.cover} alt={t.name} className="h-40 w-full object-cover" />
       <div className="p-4">
         <div className="flex items-center justify-between gap-2">
           <h3 className="font-medium">{t.name}</h3>

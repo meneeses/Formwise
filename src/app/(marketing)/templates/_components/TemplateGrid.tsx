@@ -1,5 +1,5 @@
 import TemplateCard from "./TemplateCard";
-import type { Template } from "@/lib/data"; // ajuste o path do tipo
+import type { Template } from "@/lib/data";
 
 export default function TemplateGrid({ items }: { items: Template[] }) {
   if (!items?.length) {
