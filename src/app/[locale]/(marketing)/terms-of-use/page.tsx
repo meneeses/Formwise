@@ -6,7 +6,6 @@ type Section =
   | { title: string; items: string[] }
   | { title: string; text: string; updatedAtPrefix?: string };
 
-// Next 16: params é uma Promise
 type Params = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {

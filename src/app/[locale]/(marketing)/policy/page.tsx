@@ -8,11 +8,12 @@ type Section =
 
 type Params = {params: {locale: string}};
 
-export async function generateMetadata({params: {locale}}: Params): Promise<Metadata> {
-  const t = await getTranslations({locale, namespace: "Policy"});
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Terms" });
   return {
     title: `${t("title")} | Formwise Studio`,
-    description: t("intro")
+    description: t("intro"),
   };
 }
 

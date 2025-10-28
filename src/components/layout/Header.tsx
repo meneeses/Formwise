@@ -1,32 +1,29 @@
+// src/components/layout/Header.tsx
 "use client";
 
-import {useTranslations, useLocale} from "next-intl";
-import {Link} from "@/i18n/navigation";
-import {usePathname} from "next/navigation";
 import {useEffect, useRef, useState} from "react";
+import {Link, usePathname} from "@/i18n/navigation";
+import LocaleMenu from "@/components/locale-menu";
+import ThemeToggle from "@/components/theme-toggle";
 
 const NAV = [
-  {href: "/", labelKey: "home"},
-  {href: "/how-it-works", labelKey: "how"},
-  {href: "/templates", labelKey: "templates"},
-  {href: "/pricing", labelKey: "pricing"},
-  {href: "/faq", labelKey: "faq"},
-  {href: "/contact", labelKey: "contact"}
+  { href: "/", label: "Início" },
+  { href: "/how-it-works", label: "Como funciona" },
+  { href: "/templates", label: "Templates" },
+  { href: "/pricing", label: "Preços & Licenças" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact", label: "Contato" },
 ];
 
-export default function Header({right}: {right?: React.ReactNode}) {
-  const tH = useTranslations("Header");
-  const tC = useTranslations("Common");
-  const locale = useLocale();
+export default function Header({ right }: { right?: React.ReactNode }) {
   const pathname = usePathname();
-
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // Close menu on route change
+  // fecha menu ao trocar de rota
   useEffect(() => setOpen(false), [pathname]);
 
-  // Close on outside click
+  // clique fora fecha
   useEffect(() => {
     function onClick(e: MouseEvent) {
       if (!open) return;
@@ -36,22 +33,15 @@ export default function Header({right}: {right?: React.ReactNode}) {
     return () => document.removeEventListener("click", onClick);
   }, [open]);
 
-  // Lock scroll when open
+  // trava scroll ao abrir
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  // Active matcher: compare against locale-prefixed href
-  const isActive = (href: string) => {
-    const prefixed = `/${locale}${href === "/" ? "" : href}`;
-    if (href === "/") return pathname === `/${locale}` || pathname === `/${locale}/`;
-    return pathname === prefixed || pathname.startsWith(`${prefixed}/`);
-  };
-
   const linkBase =
-    "opacity-80 hover:opacity-100 transition relative after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 " +
-    "after:bg-[rgb(var(--accent))] hover:after:w-full after:transition-[width] after:duration-200";
+    "opacity-80 hover:opacity-100 transition relative after:absolute after:-bottom-2 after:left-0 after:h-[2px] " +
+    "after:w-0 after:bg-[rgb(var(--accent))] hover:after:w-full after:transition-[width] after:duration-200";
 
   return (
     <header
@@ -62,51 +52,65 @@ export default function Header({right}: {right?: React.ReactNode}) {
         transition-colors duration-300
       "
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 py-4">
-        {/* Wordmark */}
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 py-2.5 md:py-4">
+        {/* Wordmark — menor no mobile */}
         <Link
           href="/"
-          aria-label={`${tC("brand")} ${tC("brandSuffix")} — ${tH("home")}`}
-          className="inline-flex items-baseline gap-1 transition-colors duration-300"
+          aria-label="Formwise Studio — Início"
+          className="inline-flex items-baseline gap-1"
         >
-          <span className="text-2xl md:text-3xl font-semibold tracking-tight">{tC("brand")}</span>
-          <span className="text-2xl md:text-3xl font-semibold tracking-tight text-[rgb(var(--accent))]">
-            {tC("brandSuffix")}
-          </span>
-          <span className="text-2xl md:text-3xl font-semibold tracking-tight text-[rgb(var(--accent))]">.</span>
+          <span className="text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight">Formwise</span>
+          <span className="text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight text-[rgb(var(--accent))]">Studio</span>
+          <span className="text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight text-[rgb(var(--accent))]">.</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm transition-colors duration-300">
+        <nav className="hidden lg:flex items-center gap-6 text-sm">
           {NAV.map((item) => {
-            const active = isActive(item.href);
+            const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={`${linkBase} ${active ? "opacity-100 after:w-full" : ""}`}
               >
-                {tH(item.labelKey as any)}
+                {item.label}
               </Link>
             );
           })}
         </nav>
 
-        {/* Right + hamburger */}
-        <div className="flex items-center gap-3">
-          {right}
+        {/* Right: no mobile mostra só Language + hamburger; ThemeToggle só no desktop */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LocaleMenu current={"pt"} />
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
+
+          {/* Hamburguer (só mobile) */}
           <button
             type="button"
-            className="lg:hidden inline-flex items-center justify-center rounded-lg p-2 ring-1 ring-[rgb(var(--fg)/0.12)] hover:ring-[rgb(var(--fg)/0.2)] active:scale-[.98] transition-colors duration-300"
-            aria-label={open ? tH("mobileMenu.close") : tH("mobileMenu.open")}
+            className="
+              inline-flex h-10 w-10 items-center justify-center rounded-lg
+              ring-1 ring-[rgb(var(--fg)/0.12)] hover:ring-[rgb(var(--fg)/0.2)]
+              active:scale-[.98] transition
+              lg:hidden
+            "
+            aria-label="Abrir menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
             <span className="sr-only">Menu</span>
-            <svg className={`h-5 w-5 ${open ? "hidden" : "block"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+            <svg
+              className={`h-5 w-5 ${open ? "hidden" : "block"}`}
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"
+            >
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <svg className={`h-5 w-5 ${open ? "block" : "hidden"}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+            <svg
+              className={`h-5 w-5 ${open ? "block" : "hidden"}`}
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"
+            >
               <path d="M6 6l12 12M18 6l-12 12" />
             </svg>
           </button>
@@ -120,17 +124,24 @@ export default function Header({right}: {right?: React.ReactNode}) {
           open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="mx-auto max-w-7xl px-4 sm:px-6 py-4 transition-colors duration-300">
+        <nav className="mx-auto max-w-7xl px-4 sm:px-6 py-4">
+          {/* ThemeToggle dentro do menu mobile */}
+          <div className="mb-3">
+            <ThemeToggle />
+          </div>
+
           <ul className="grid gap-2">
             {NAV.map((item) => {
-              const active = isActive(item.href);
+              const active = pathname === item.href;
               return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     className={`
-                      block rounded-xl px-3 pt-2 pb-3 text-base transition-colors duration-300
-                      ${active ? "bg-[rgb(var(--fg)/0.05)] dark:bg-white/5 font-medium" : "hover:bg-[rgb(var(--fg)/0.04)] dark:hover:bg-white/5"}
+                      block rounded-xl px-3 pt-2 pb-3 text-base
+                      ${active
+                        ? "bg-[rgb(var(--fg)/0.05)] dark:bg-white/5 font-medium"
+                        : "hover:bg-[rgb(var(--fg)/0.04)] dark:hover:bg-white/5"}
                     `}
                   >
                     <span
@@ -139,7 +150,7 @@ export default function Header({right}: {right?: React.ReactNode}) {
                         ${active ? "after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-[rgb(var(--accent))]" : ""}
                       `}
                     >
-                      {tH(item.labelKey as any)}
+                      {item.label}
                     </span>
                   </Link>
                 </li>
@@ -147,13 +158,14 @@ export default function Header({right}: {right?: React.ReactNode}) {
             })}
           </ul>
 
+          {/* CTA opcional; ajuste a rota localizada se necessário */}
           <div className="mt-4">
             <Link
               href="/contact"
               className="inline-flex w-full items-center justify-center rounded-xl px-4 py-2 text-sm font-medium
-                       bg-[rgb(var(--brand))] text-white hover:brightness-95 transition-colors duration-300"
+                        bg-[rgb(var(--brand))] text-white hover:brightness-95 transition"
             >
-              {tC("contactUs")}
+              Falar com a Formwise
             </Link>
           </div>
         </nav>
@@ -161,3 +173,5 @@ export default function Header({right}: {right?: React.ReactNode}) {
     </header>
   );
 }
+
+
