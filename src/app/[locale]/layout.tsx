@@ -1,50 +1,67 @@
 // src/app/[locale]/layout.tsx
-import type {Metadata} from 'next';
-import {NextIntlClientProvider} from 'next-intl';
-import {notFound} from 'next/navigation';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import ThemeToggle from '@/components/theme-toggle';
-import RouteTransition from '@/components/ui/RouteTransition';
-import ViewportVars from '@/components/ui/ViewportVars';
-import WhatsAppMini from '@/components/whatsapp-fab';
-import LocaleMenu from '@/components/locale-menu';
+import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import ThemeToggle from "@/components/theme-toggle";
+import RouteTransition from "@/components/ui/RouteTransition";
+import ViewportVars from "@/components/ui/ViewportVars";
+import WhatsAppMini from "@/components/whatsapp-fab";
+import LocaleMenu from "@/components/locale-menu";
 
-const locales = ['pt','en','es'] as const;
-type Locale = typeof locales[number];
+const locales = ["pt", "en", "es"] as const;
+type Locale = (typeof locales)[number];
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+  return locales.map((locale) => ({ locale }));
 }
 
+// ⬇️ params é síncrono e amplo ({ locale: string })
 export async function generateMetadata({
-  params
+  params,
 }: {
-  params: Promise<{locale: Locale}>
+  params: { locale: string };
 }): Promise<Metadata> {
-  const {locale} = await params;
+  const localeParam = params.locale;
+
+  // valida sem quebrar a compatibilidade com Next
+  const locale: Locale | null = locales.includes(localeParam as Locale)
+    ? (localeParam as Locale)
+    : null;
 
   let messages: any = {};
-  try {
-    messages = (await import(`@/messages/${locale}.json`)).default;
-  } catch {}
+  if (locale) {
+    try {
+      messages = (await import(`@/messages/${locale}.json`)).default;
+    } catch {
+      // sem mensagens, usamos metas padrão
+    }
+  }
 
   const meta = messages?.meta ?? {};
   return {
-    title: meta.title ?? 'Formwise Studio',
-    description: meta.description ?? 'Templates modernos para sites, prontos para personalizar.'
+    title: meta.title ?? "Formwise Studio",
+    description:
+      meta.description ?? "Templates modernos para sites, prontos para personalizar.",
   };
 }
 
+// ⬇️ params é síncrono e com { locale: string }
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: Locale}>;
+  params: { locale: string };
 }) {
-  const {locale} = await params;
-  if (!locales.includes(locale)) notFound();
+  const localeParam = params.locale;
+
+  if (!locales.includes(localeParam as Locale)) {
+    // evitar notFound no root layout; aqui é layout de segmento, é seguro.
+    notFound();
+  }
+  const locale = localeParam as Locale;
 
   let messages: Record<string, any>;
   try {
