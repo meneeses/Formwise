@@ -1,29 +1,35 @@
-import Link from "next/link";
+// src/components/layout/Footer.tsx (Server Component)
+import {getLocale, getTranslations} from "next-intl/server";
+import {Link} from "@/i18n/navigation";
 
-export default function Footer() {
+export default async function Footer() {
+  const locale = await getLocale();
+  const tFooter = await getTranslations({locale, namespace: 'Footer'});
+  const tHeader = await getTranslations({locale, namespace: "Header"});
+  const tCommon = await getTranslations({locale, namespace: "Common"});
+
+  const year = new Date().getFullYear();
+
   return (
-    <footer
-      className="
-        mt-12 border-t border-[rgb(var(--line)/0.08)]
-        bg-[rgb(var(--bg))]
-      "
-    >
+    <footer className="mt-12 border-t border-[rgb(var(--line)/0.08)] bg-[rgb(var(--bg))]">
       <div className="mx-auto max-w-7xl px-6 py-10 md:py-12">
         {/* Top: brand + descrição + social */}
         <div className="grid gap-8 md:grid-cols-3">
           <div>
             <Link href="/" className="inline-flex items-baseline gap-1">
-              <span className="text-xl font-semibold tracking-tight">Formwise</span>
-              <span className="text-xl font-semibold tracking-tight text-[rgb(var(--accent))]">Studio</span>
+              <span className="text-xl font-semibold tracking-tight">{tCommon("brand")}</span>
+              <span className="text-xl font-semibold tracking-tight text-[rgb(var(--accent))]">
+                {tCommon("brandSuffix")}
+              </span>
               <span className="text-xl font-semibold tracking-tight text-[rgb(var(--accent))]">.</span>
             </Link>
             <p className="mt-2 max-w-sm text-sm text-[rgb(var(--muted))]">
-              Sites minimalistas, rápidos e bonitos — prontos para destacar seu negócio.
+              {tFooter("tagline")}
             </p>
 
             {/* Social */}
             <div className="mt-4 flex items-center gap-3">
-              <Social href="https://instagram.com/formwisestudio" label="Instagram">
+              <Social href="https://instagram.com/formwisestudio" label={tFooter("social.instagram")}>
                 {/* instagram */}
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
                   <rect x="3" y="3" width="18" height="18" rx="4" />
@@ -31,7 +37,7 @@ export default function Footer() {
                   <circle cx="12" cy="12" r="4.5" />
                 </svg>
               </Social>
-              <Social href="https://www.linkedin.com/formwisestudio" label="LinkedIn">
+              <Social href="https://www.linkedin.com/formwisestudio" label={tFooter("social.linkedin")}>
                 {/* linkedin */}
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
                   <path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-12h4v2a4 4 0 0 1 2-2z" />
@@ -45,19 +51,19 @@ export default function Footer() {
           {/* Navegação */}
           <nav className="grid grid-cols-2 gap-4 text-sm sm:grid-cols-3 md:col-span-2 md:justify-items-end">
             <div>
-              <div className="text-[13px] font-medium text-[rgb(var(--muted))]">Páginas</div>
+              <div className="text-[13px] font-medium text-[rgb(var(--muted))]">{tFooter("pages")}</div>
               <ul className="mt-2 space-y-1.5">
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/">Início</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/how-it-works">Como funciona</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/templates">Templates</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/pricing">Preços & Licenças</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/faq">FAQ</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/contact">Contato</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/">{tHeader("home")}</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/how-it-works">{tHeader("how")}</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/templates">{tHeader("templates")}</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/pricing">{tHeader("pricing")}</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/faq">{tHeader("faq")}</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/contact">{tHeader("contact")}</Link></li>
               </ul>
             </div>
 
             <div>
-              <div className="text-[13px] font-medium text-[rgb(var(--muted))]">Contato</div>
+              <div className="text-[13px] font-medium text-[rgb(var(--muted))]">{tFooter("contact")}</div>
               <ul className="mt-2 space-y-1.5">
                 <li>
                   <a className="opacity-80 hover:opacity-100 transition" href="mailto:formwisestudio@gmail.com">
@@ -65,19 +71,24 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a className="opacity-80 hover:opacity-100 transition" href="https://wa.me/5541996727030" target="_blank" rel="noopener noreferrer">
-                    WhatsApp
+                  <a
+                    className="opacity-80 hover:opacity-100 transition"
+                    href="https://wa.me/5541996727030"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {tFooter("social.whatsapp")}
                   </a>
                 </li>
-                <li className="text-[rgb(var(--muted))]">Seg–Sex · 09h–18h</li>
+                <li className="text-[rgb(var(--muted))]">{tFooter("hours")}</li>
               </ul>
             </div>
 
             <div className="sm:col-span-2 md:col-span-1">
-              <div className="text-[13px] font-medium text-[rgb(var(--muted))]">Legal</div>
+              <div className="text-[13px] font-medium text-[rgb(var(--muted))]">{tFooter("legal")}</div>
               <ul className="mt-2 space-y-1.5">
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/policy">Política de Privacidade</Link></li>
-                <li><Link className="opacity-80 hover:opacity-100 transition" href="/terms-of-use">Termos de Uso</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/policy">{tFooter("privacy")}</Link></li>
+                <li><Link className="opacity-80 hover:opacity-100 transition" href="/terms-of-use">{tFooter("terms")}</Link></li>
               </ul>
             </div>
           </nav>
@@ -86,10 +97,10 @@ export default function Footer() {
         {/* Bottom line */}
         <div className="mt-8 flex flex-col items-start justify-between gap-3 border-t border-[rgb(var(--line)/0.08)] pt-4 text-sm md:flex-row">
           <div className="text-[rgb(var(--muted))]">
-            © {new Date().getFullYear()} Formwise Studio — Todos os direitos reservados.
+            © {year} {tCommon("brand")} {tCommon("brandSuffix")} — {tFooter("copyright")}
           </div>
           <div className="text-[rgb(var(--muted))]">
-            Feito com <span aria-hidden>❤️</span> no Brasil
+            {tFooter("madeIn")}
           </div>
         </div>
       </div>
@@ -100,7 +111,7 @@ export default function Footer() {
 function Social({
   href,
   label,
-  children,
+  children
 }: {
   href: string;
   label: string;

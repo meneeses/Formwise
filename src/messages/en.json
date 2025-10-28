@@ -1,0 +1,477 @@
+{
+  "Common": {
+    "brand": "Formwise",
+    "brandSuffix": "Studio",
+    "loading": "Loading...",
+    "learnMore": "Learn more",
+    "seeHow": "See how it works",
+    "viewTemplates": "View templates",
+    "contactUs": "Contact Formwise",
+    "send": "Send",
+    "required": "Required",
+    "success": "All good!",
+    "error": "An error occurred. Please try again."
+  },
+  "Header": {
+    "home": "Home",
+    "how": "How it works",
+    "templates": "Templates",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "themeToggle": {
+      "light": "Light mode",
+      "dark": "Dark mode",
+      "aria": "Toggle theme"
+    },
+    "mobileMenu": {
+      "open": "Open menu",
+      "close": "Close menu"
+    },
+    "activeUnderline": "Active"
+  },
+  "Hero": {
+    "headline": "<accent>Minimalist</accent> websites that make your business stand out.",
+    "subtitle": "Choose a template, send your content, and publish quickly with quality. Clean visuals, performance, and responsiveness.",
+    "ctaTemplates": "View templates",
+    "ctaHow": "How it works",
+    "browserBarHint": "Address",
+    "imageAlt": "Preview of a modern website"
+  },
+  "About": {
+    "badge": "ABOUT US",
+    "title": "Who we are",
+    "subtitle": "Design and code working together for minimalist, fast, and essential websites.",
+    "p1": "Formwise Studio was born to remove the complexity of website creation and focus on what matters: clarity, performance, and minimalist aesthetics. We combine design and engineering to deliver ready-made, polished, and easy-to-customize templates — without noise.",
+    "p2": "Our proposal is simple: you choose a template, send your content, and we adjust the identity. The result is a light, beautiful, and functional website.",
+    "quote": "“Less ornament, more intention. Every block exists to communicate your business better.”",
+    "cards": [
+      {
+        "icon": "✏️",
+        "title": "Quick customization",
+        "desc": "Colors, typography, and content aligned with your brand."
+      },
+      {
+        "icon": "⚡️",
+        "title": "Performance & SEO",
+        "desc": "Optimized images and best practices."
+      },
+      {
+        "icon": "✅",
+        "title": "Reliable delivery",
+        "desc": "Assisted publishing and initial support."
+      }
+    ],
+    "stats": [
+      {
+        "value": "+20",
+        "label": "base templates"
+      },
+      {
+        "value": "~5 days",
+        "label": "to publish"
+      },
+      {
+        "value": "100%",
+        "label": "focus on essentials"
+      }
+    ],
+    "cta": "See how it works to get your template"
+  },
+  "ValueProps": {
+    "items": [
+      {
+        "icon": "pro",
+        "title": "Professional look",
+        "desc": "Flat design, strong typography, and focus on content."
+      },
+      {
+        "icon": "fast",
+        "title": "Fast & responsive",
+        "desc": "Loads fast and adapts from mobile to desktop."
+      },
+      {
+        "icon": "edit",
+        "title": "Easy to edit",
+        "desc": "Content via template.json. No complications."
+      }
+    ]
+  },
+  "Steps": {
+    "title": "How it works",
+    "subtitle": "A clear timeline: what we do, what you prepare, and the estimated time per step.",
+    "summary": "Average publication time: <strong>~4–5 days</strong> after receiving all content. Fine-tuning and initial support included.",
+    "cta": "Choose a template",
+    "itemsLabels": {
+      "weDo": "What we do",
+      "youDo": "What you prepare"
+    },
+    "items": [
+      {
+        "n": "1",
+        "title": "Choose a template",
+        "desc": "Browse the catalog and select the best look for your business.",
+        "fazemos": [
+          "We help you choose by segment",
+          "We adjust fonts and spacing for harmony",
+          "We apply initial colors that match your brand"
+        ],
+        "voce": [
+          "Send your logo in good quality",
+          "Share references (if you have any)",
+          "Define the pages you want"
+        ],
+        "eta": "~1 day"
+      },
+      {
+        "n": "2",
+        "title": "Send your content",
+        "desc": "Texts and images — we assemble everything for you.",
+        "fazemos": [
+          "We organize site sections",
+          "We process and optimize images for faster loading",
+          "We fill in titles and descriptions for Google"
+        ],
+        "voce": [
+          "Send concise, reviewed texts",
+          "Provide clear photos of your business",
+          "Provide your contact channels (WhatsApp, email, socials)"
+        ],
+        "eta": "~2–3 days",
+        "tip": "Tip: if you don’t have images yet, we can suggest free sources and ideal sizes."
+      },
+      {
+        "n": "3",
+        "title": "We publish it for you",
+        "desc": "We put the site live and follow the launch.",
+        "fazemos": [
+          "We publish the site",
+          "We connect it to your domain",
+          "We install basic analytics tools (optional)"
+        ],
+        "voce": [
+          "Provide domain access",
+          "Confirm data for domain pointing",
+          "Do a final navigation test"
+        ],
+        "eta": "~1 day"
+      }
+    ]
+  },
+  "Included": {
+    "title": "What’s included",
+    "items": [
+      {
+        "icon": "🚀",
+        "title": "Published site",
+        "desc": "We put your website online and make it accessible on your domain."
+      },
+      {
+        "icon": "📱",
+        "title": "Responsive layout",
+        "desc": "Looks great on mobile, tablet, and desktop."
+      },
+      {
+        "icon": "🧩",
+        "title": "Organized content",
+        "desc": "Clear sections with your texts and photos in place."
+      },
+      {
+        "icon": "⚡️",
+        "title": "Speed",
+        "desc": "Loads fast so you don’t lose visitors."
+      },
+      {
+        "icon": "🔎",
+        "title": "Google-ready",
+        "desc": "Basic SEO setup to appear well in searches."
+      },
+      {
+        "icon": "🤝",
+        "title": "Initial support",
+        "desc": "We guide you through the first days and make any needed adjustments."
+      }
+    ]
+  },
+  "AddOns": {
+    "title": "Optional add-ons",
+    "note": "Upon request",
+    "items": [
+      {
+        "icon": "✍️",
+        "title": "Copywriting",
+        "desc": "Text optimization for conversion."
+      },
+      {
+        "icon": "📰",
+        "title": "Blog/Articles",
+        "desc": "Structure for posts and categories."
+      },
+      {
+        "icon": "🔗",
+        "title": "Integrations",
+        "desc": "Forms, CRM, chat, extra analytics."
+      },
+      {
+        "icon": "🖼️",
+        "title": "Image pack",
+        "desc": "Curated and basic editing support."
+      }
+    ]
+  },
+  "CTASection": {
+    "title": "Ready to start?",
+    "desc": "Check out the available templates and choose the best one for your business.",
+    "primary": "View templates",
+    "secondary": "Contact Formwise"
+  },
+  "TemplatesPage": {
+    "title": "Templates",
+    "subtitle": "Choose a template for your website.",
+    "empty": "Nothing here yet — we’re preparing the templates.",
+    "card": {
+      "details": "View details",
+      "others": "Others"
+    },
+    "categories": {
+      "all": "All",
+      "popular": "Popular"
+    }
+  },
+  "PricingPage": {
+    "title": "Pricing & Licenses",
+    "subtitle": "Straightforward plans: choose what fits your stage. Publishing included and initial support provided.",
+    "note": "* Base values for static sites. Integrations, extra pages, and custom content may change the investment.",
+    "plans": [
+      {
+        "name": "Essential",
+        "price": "$199",
+        "caption": "For a solid start",
+        "features": [
+          "1 main page",
+          "Standard sections (about, services, contact)",
+          "Responsive layout",
+          "Publishing included",
+          "Initial support (7 days)"
+        ],
+        "cta": "Choose this",
+        "highlight": false
+      },
+      {
+        "name": "Professional",
+        "price": "$299",
+        "caption": "More room for content",
+        "features": [
+          "Up to 4 pages",
+          "Fine identity adjustments",
+          "Google-ready (basic)",
+          "Publishing + domain",
+          "Initial support (15 days)"
+        ],
+        "cta": "Contact Formwise",
+        "highlight": true
+      },
+      {
+        "name": "Custom",
+        "price": "On request",
+        "caption": "For specific needs",
+        "features": [
+          "Content mapping",
+          "Extra pages and integrations",
+          "Optional blog/articles",
+          "Priority publishing",
+          "Dedicated support"
+        ],
+        "cta": "Request quote",
+        "highlight": false
+      }
+    ]
+  },
+  "FAQPage": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers about timelines, adjustments, and how publishing works.",
+    "items": [
+      {
+        "q": "How long does it take to publish my site?",
+        "a": "On average 4–5 days after we receive all content (texts, images, and contact info)."
+      },
+      {
+        "q": "Can I request design adjustments?",
+        "a": "Yes. We adjust colors, typography, and spacing within the chosen template’s style."
+      },
+      {
+        "q": "Will I be able to edit the content later?",
+        "a": "Yes. We deliver the site ready for simple updates (texts and images)."
+      },
+      {
+        "q": "Do you configure my domain?",
+        "a": "Yes. We assist with domain setup and DNS pointing."
+      },
+      {
+        "q": "Is the website responsive?",
+        "a": "Totally. It adapts to mobile, tablet, and desktop."
+      }
+    ]
+  },
+  "ContactPage": {
+    "title": "Contact",
+    "subtitle": "Send us a message and we’ll reply quickly. Just fill out the fields below.",
+    "form": {
+      "name": {
+        "label": "Your name",
+        "placeholder": "How should we call you?"
+      },
+      "email": {
+        "label": "Your email",
+        "placeholder": "you@email.com"
+      },
+      "phone": {
+        "label": "Your WhatsApp",
+        "placeholder": "(11) 91234-5678"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us briefly how we can help 🙂"
+      },
+      "consent": {
+        "label": "I agree with the <link>Privacy Policy</link>.",
+        "aria": "Accept privacy policy"
+      },
+      "submit": "Send message",
+      "disclaimer": "We don’t store your data on the site — only use it to respond to your message.",
+      "thanksTitle": "Message sent!",
+      "thanksBody": "We received your details and will reply soon. Thanks for getting in touch.",
+      "thanksBackHome": "Back to home",
+      "thanksSeeTemplates": "See templates"
+    }
+  },
+  "Policy": {
+    "title": "Privacy Policy",
+    "intro": "This Privacy Policy describes how Formwise Studio (“we”) collects, uses, and protects your information when using our website and services.",
+    "sections": [
+      {
+        "title": "1. Information we collect",
+        "items": [
+          "Contact details you provide (e.g., name, email, phone).",
+          "Content and preferences for building your site.",
+          "Basic technical usage data (e.g., pages visited, device, cookies)."
+        ]
+      },
+      {
+        "title": "2. How we use your data",
+        "items": [
+          "To fulfill requests, send proposals, and provide support.",
+          "To build, customize, and publish your site as requested.",
+          "To improve navigation experience and our offers."
+        ]
+      },
+      {
+        "title": "3. Legal basis and consent",
+        "text": "We process your data based on your consent and/or service agreements, in accordance with applicable laws (including GDPR/LGPD)."
+      },
+      {
+        "title": "4. Cookies and similar technologies",
+        "text": "We may use cookies to remember preferences and understand site usage. You can manage cookies in your browser. If we use analytics tools, they may collect aggregated navigation data."
+      },
+      {
+        "title": "5. Data sharing",
+        "text": "We don’t sell your data. We may share it with service providers necessary for operation (e.g., hosting, email, analytics), always with security measures and only for the purposes described here."
+      },
+      {
+        "title": "6. Information security",
+        "text": "We adopt technical and organizational measures to protect your data. No method is 100% infallible, but we follow market best practices."
+      },
+      {
+        "title": "7. Your rights",
+        "text": "You can request access, correction, update, or deletion of your data, and revoke consent. To exercise your rights, please contact us."
+      },
+      {
+        "title": "8. Contact",
+        "text": "Email: contact@formwise.studio"
+      },
+      {
+        "title": "9. Policy updates",
+        "text": "We may update this document at any time. The new version will be published on this page.",
+        "updatedAtPrefix": "Last updated"
+      }
+    ]
+  },
+  "Terms": {
+    "title": "Terms of Use",
+    "intro": "By accessing our website and/or using our services, you agree to these Terms of Use. Please read carefully.",
+    "sections": [
+      {
+        "title": "1. Services",
+        "text": "We offer website templates and customization/publishing services. Scope, timelines, and pricing are defined in a specific proposal for each project."
+      },
+      {
+        "title": "2. Client content",
+        "text": "You are responsible for the content provided (texts, images, trademarks). By sending it, you declare that you have the rights necessary for its use and publication."
+      },
+      {
+        "title": "3. Publishing and domain",
+        "text": "We assist in site publishing and domain configuration. Domain registration/renewal and hosting/platform costs may be the client’s responsibility, as agreed."
+      },
+      {
+        "title": "4. Payments",
+        "text": "Payment terms are defined in the proposal. In case of delay, the delivery schedule may be adjusted."
+      },
+      {
+        "title": "5. Intellectual property",
+        "text": "Templates and materials developed by us are licensed for your use under the contracted plan. Redistribution or resale without authorization is prohibited."
+      },
+      {
+        "title": "6. Limitation of liability",
+        "text": "We are not responsible for third-party outages, data loss from external services, or indirect damages from site use. We make reasonable efforts to maintain service quality and continuity."
+      },
+      {
+        "title": "7. Cancellation",
+        "text": "You may request cancellation at any time. Refund conditions, if any, will be assessed based on the project stage and agreed proposal."
+      },
+      {
+        "title": "8. Changes to these Terms",
+        "text": "We may update these Terms periodically. The current version will always be published on this page.",
+        "updatedAtPrefix": "Last updated"
+      },
+      {
+        "title": "9. Contact",
+        "text": "If you have questions, contact us at formwisestudio@gmail.com"
+      }
+    ]
+  },
+  "Footer": {
+    "tagline": "Minimalist, fast, and beautiful websites — ready to make your business stand out.",
+    "pages": "Pages",
+    "contact": "Contact",
+    "legal": "Legal",
+    "social": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp"
+    },
+    "hours": "Mon–Fri · 9am–6pm",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "copyright": "All rights reserved.",
+    "madeIn": "Made with ❤️ in Brazil"
+  },
+  "WhatsMini": {
+    "title": "Chat with Formwise",
+    "open": "Open WhatsApp chat",
+    "close": "Close WhatsApp chat",
+    "name": "Name",
+    "phone": "Phone (WhatsApp)",
+    "email": "Email",
+    "namePh": "How should we call you?",
+    "phonePh": "(11) 91234-5678",
+    "emailPh": "you@email.com",
+    "submit": "Send & open WhatsApp",
+    "disclaimer": "By sending, we’ll open a WhatsApp conversation with your filled data."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "desc": "The URL you tried may have been moved, renamed, or no longer exists.",
+    "backHome": "Back to home",
+    "viewTemplates": "View templates"
+  }
+}

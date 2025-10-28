@@ -1,0 +1,477 @@
+{
+  "Common": {
+    "brand": "Formwise",
+    "brandSuffix": "Studio",
+    "loading": "Carregando...",
+    "learnMore": "Saiba mais",
+    "seeHow": "Veja como funciona",
+    "viewTemplates": "Ver templates",
+    "contactUs": "Falar com a Formwise",
+    "send": "Enviar",
+    "required": "Obrigatório",
+    "success": "Tudo certo!",
+    "error": "Ocorreu um erro. Tente novamente."
+  },
+  "Header": {
+    "home": "Início",
+    "how": "Como funciona",
+    "templates": "Templates",
+    "pricing": "Preços",
+    "faq": "FAQ",
+    "contact": "Contato",
+    "themeToggle": {
+      "light": "Modo claro",
+      "dark": "Modo escuro",
+      "aria": "Alternar tema"
+    },
+    "mobileMenu": {
+      "open": "Abrir menu",
+      "close": "Fechar menu"
+    },
+    "activeUnderline": "Ativo"
+  },
+  "Hero": {
+    "headline": "Sites <accent>minimalistas</accent> que destacam seu negócio.",
+    "subtitle": "Escolha um template, envie seu conteúdo e publique com velocidade e qualidade. Visual limpo, performance e responsividade.",
+    "ctaTemplates": "Ver templates",
+    "ctaHow": "Como funciona",
+    "browserBarHint": "Endereço",
+    "imageAlt": "Prévia de um site moderno"
+  },
+  "About": {
+    "badge": "SOBRE NÓS",
+    "title": "Quem somos",
+    "subtitle": "Design e código trabalhando juntos para sites minimalistas, rápidos e focados no essencial.",
+    "p1": "A Formwise Studio nasceu para tirar a complexidade da criação de sites e focar no que importa: clareza, performance e estética minimalista. Unimos design e engenharia para entregar modelos prontos, polidos e fáceis de personalizar — sem ruído.",
+    "p2": "Nossa proposta é simples: você escolhe um template, envia conteúdo e nós ajustamos a identidade. O resultado é um site leve, bonito e funcional.",
+    "quote": "“Menos ornamento, mais intenção. Cada bloco existe para comunicar melhor o seu negócio.”",
+    "cards": [
+      {
+        "icon": "✏️",
+        "title": "Personalização ágil",
+        "desc": "Cores, tipografia e conteúdo alinhados à sua marca."
+      },
+      {
+        "icon": "⚡️",
+        "title": "Performance e SEO",
+        "desc": "Imagens otimizadas e boas práticas."
+      },
+      {
+        "icon": "✅",
+        "title": "Entrega confiável",
+        "desc": "Publicação assistida e suporte inicial."
+      }
+    ],
+    "stats": [
+      {
+        "value": "+20",
+        "label": "templates base"
+      },
+      {
+        "value": "~5 dias",
+        "label": "para publicar"
+      },
+      {
+        "value": "100%",
+        "label": "foco no essencial"
+      }
+    ],
+    "cta": "Veja como funciona para adquirir seu template"
+  },
+  "ValueProps": {
+    "items": [
+      {
+        "icon": "pro",
+        "title": "Visual profissional",
+        "desc": "Design flat, tipografia forte e foco no conteúdo."
+      },
+      {
+        "icon": "fast",
+        "title": "Rápido e responsivo",
+        "desc": "Carrega leve e se adapta do mobile ao desktop."
+      },
+      {
+        "icon": "edit",
+        "title": "Fácil de editar",
+        "desc": "Conteúdo via template.json. Sem complicação."
+      }
+    ]
+  },
+  "Steps": {
+    "title": "Como funciona",
+    "subtitle": "Linha do tempo clara: o que fazemos, o que você prepara e o tempo estimado por etapa.",
+    "summary": "Prazo médio de publicação: <strong>~4–5 dias</strong> após o envio do conteúdo completo. Ajustes finos e suporte inicial incluídos.",
+    "cta": "Escolher um template",
+    "itemsLabels": {
+      "weDo": "O que nós fazemos",
+      "youDo": "O que você prepara"
+    },
+    "items": [
+      {
+        "n": "1",
+        "title": "Escolha um template",
+        "desc": "Navegue pelo catálogo e selecione o visual ideal para o seu negócio.",
+        "fazemos": [
+          "Ajudamos a escolher pelo seu segmento",
+          "Ajustamos fontes e espaçamentos para ficar harmônico",
+          "Aplicamos cores iniciais que combinem com sua marca"
+        ],
+        "voce": [
+          "Envie sua logo em boa qualidade",
+          "Compartilhe referências (se tiver)",
+          "Defina as páginas que quer ter"
+        ],
+        "eta": "~1 dia"
+      },
+      {
+        "n": "2",
+        "title": "Envie o conteúdo",
+        "desc": "Textos e imagens — nós montamos tudo pra você.",
+        "fazemos": [
+          "Organizamos as seções do site",
+          "Tratamos e reduzimos as imagens para carregar rápido",
+          "Preenchemos títulos e descrições para o Google"
+        ],
+        "voce": [
+          "Envie textos revisados e diretos",
+          "Separe fotos nítidas do seu negócio",
+          "Informe canais de contato (WhatsApp, e-mail, redes)"
+        ],
+        "eta": "~2–3 dias",
+        "tip": "Dica: se ainda não tiver imagens, podemos sugerir bancos gratuitos e orientar tamanhos ideais."
+      },
+      {
+        "n": "3",
+        "title": "Publicamos pra você",
+        "desc": "Colocamos o site no ar e acompanhamos o início.",
+        "fazemos": [
+          "Publicamos o site",
+          "Conectamos ao seu domínio",
+          "Instalamos ferramentas básicas de visitas (opcional)"
+        ],
+        "voce": [
+          "Forneça acesso ao domínio",
+          "Confirme os dados para apontar o endereço do site",
+          "Faça um teste final de navegação"
+        ],
+        "eta": "~1 dia"
+      }
+    ]
+  },
+  "Included": {
+    "title": "O que você recebe",
+    "items": [
+      {
+        "icon": "🚀",
+        "title": "Site publicado",
+        "desc": "Colocamos seu site no ar e deixamos acessível no seu domínio."
+      },
+      {
+        "icon": "📱",
+        "title": "Visual responsivo",
+        "desc": "Fica bonito e legível no celular, tablet e computador."
+      },
+      {
+        "icon": "🧩",
+        "title": "Conteúdo organizado",
+        "desc": "Seções claras com seus textos e fotos já encaixados."
+      },
+      {
+        "icon": "⚡️",
+        "title": "Velocidade",
+        "desc": "Carrega rápido para não perder visitantes."
+      },
+      {
+        "icon": "🔎",
+        "title": "Pronto para o Google",
+        "desc": "Configurações básicas para aparecer bem nas buscas."
+      },
+      {
+        "icon": "🤝",
+        "title": "Suporte inicial",
+        "desc": "Acompanhamos os primeiros dias e ajustamos o que for preciso."
+      }
+    ]
+  },
+  "AddOns": {
+    "title": "Adicionais (opcionais)",
+    "note": "Sob consulta",
+    "items": [
+      {
+        "icon": "✍️",
+        "title": "Copywriting",
+        "desc": "Ajuste de texto para conversão."
+      },
+      {
+        "icon": "📰",
+        "title": "Blog/Artigos",
+        "desc": "Estrutura de posts e categorias."
+      },
+      {
+        "icon": "🔗",
+        "title": "Integrações",
+        "desc": "Formulários, CRM, chat, análises extras."
+      },
+      {
+        "icon": "🖼️",
+        "title": "Pacote de imagens",
+        "desc": "Curadoria e tratamento básico."
+      }
+    ]
+  },
+  "CTASection": {
+    "title": "Pronto para começar?",
+    "desc": "Veja os templates disponíveis e escolha o melhor para o seu negócio.",
+    "primary": "Ver templates",
+    "secondary": "Falar com a Formwise"
+  },
+  "TemplatesPage": {
+    "title": "Templates",
+    "subtitle": "Escolha um template para o seu site.",
+    "empty": "Nada por aqui ainda — estamos preparando os templates.",
+    "card": {
+      "details": "Ver detalhes",
+      "others": "Outros"
+    },
+    "categories": {
+      "all": "Todos",
+      "popular": "Populares"
+    }
+  },
+  "PricingPage": {
+    "title": "Preços & Licenças",
+    "subtitle": "Planos diretos: escolha o que combina com seu momento. Publicação inclusa e suporte inicial.",
+    "note": "* Valores base para sites estáticos. Integrações, páginas extras e conteúdo sob medida podem alterar o investimento.",
+    "plans": [
+      {
+        "name": "Essencial",
+        "price": "R$ 990",
+        "caption": "Para começar bem",
+        "features": [
+          "1 página principal",
+          "Seções padrão (sobre, serviços, contato)",
+          "Visual responsivo",
+          "Publicação inclusa",
+          "Suporte inicial (7 dias)"
+        ],
+        "cta": "Quero este",
+        "highlight": false
+      },
+      {
+        "name": "Profissional",
+        "price": "R$ 1.490",
+        "caption": "Mais espaço para conteúdo",
+        "features": [
+          "Até 4 páginas",
+          "Ajustes finos de identidade",
+          "Pronto para o Google (básico)",
+          "Publicação + domínio",
+          "Suporte inicial (15 dias)"
+        ],
+        "cta": "Falar com a Formwise",
+        "highlight": true
+      },
+      {
+        "name": "Sob medida",
+        "price": "Sob consulta",
+        "caption": "Para necessidades específicas",
+        "features": [
+          "Mapeamento de conteúdo",
+          "Páginas extras e integrações",
+          "Blog/Artigos opcional",
+          "Prioridade na publicação",
+          "Suporte dedicado"
+        ],
+        "cta": "Solicitar proposta",
+        "highlight": false
+      }
+    ]
+  },
+  "FAQPage": {
+    "title": "Perguntas frequentes",
+    "subtitle": "Tire suas dúvidas sobre prazos, ajustes e como funciona a publicação.",
+    "items": [
+      {
+        "q": "Quanto tempo leva para publicar meu site?",
+        "a": "Em média 4–5 dias após recebermos todo o conteúdo (textos, imagens e dados de contato)."
+      },
+      {
+        "q": "Posso pedir ajustes de design?",
+        "a": "Sim. Ajustamos cores, tipografia e espaçamentos dentro do estilo do template escolhido."
+      },
+      {
+        "q": "Vou conseguir editar o conteúdo depois?",
+        "a": "Sim. Entregamos o site já pronto para atualizações simples (textos e imagens)."
+      },
+      {
+        "q": "Vocês configuram o meu domínio?",
+        "a": "Sim. Acompanhamos a configuração do domínio e os apontamentos necessários."
+      },
+      {
+        "q": "O site é responsivo?",
+        "a": "Totalmente. Ele se adapta a celular, tablet e desktop."
+      }
+    ]
+  },
+  "ContactPage": {
+    "title": "Contato",
+    "subtitle": "Envie sua mensagem e respondemos rapidinho. Basta preencher os campos abaixo.",
+    "form": {
+      "name": {
+        "label": "Seu nome",
+        "placeholder": "Como quer ser chamado(a)?"
+      },
+      "email": {
+        "label": "Seu e-mail",
+        "placeholder": "voce@email.com"
+      },
+      "phone": {
+        "label": "Seu WhatsApp",
+        "placeholder": "(11) 91234-5678"
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Conte em poucas linhas como podemos ajudar 🙂"
+      },
+      "consent": {
+        "label": "Concordo com a <link>Política de Privacidade</link>.",
+        "aria": "Aceitar a política de privacidade"
+      },
+      "submit": "Enviar mensagem",
+      "disclaimer": "Não armazenamos seus dados no site — só usamos para responder seu contato.",
+      "thanksTitle": "Mensagem enviada!",
+      "thanksBody": "Recebemos seus dados e vamos responder em breve. Obrigado por entrar em contato.",
+      "thanksBackHome": "Voltar ao início",
+      "thanksSeeTemplates": "Ver templates"
+    }
+  },
+  "Policy": {
+    "title": "Política de Privacidade",
+    "intro": "Esta Política de Privacidade descreve como a Formwise Studio (“nós”) coleta, usa e protege suas informações ao utilizar nosso site e serviços.",
+    "sections": [
+      {
+        "title": "1. Informações que coletamos",
+        "items": [
+          "Dados de contato enviados por você (ex.: nome, e-mail, telefone).",
+          "Conteúdos e preferências para montagem do seu site.",
+          "Dados técnicos básicos de uso (ex.: páginas acessadas, dispositivo, cookies)."
+        ]
+      },
+      {
+        "title": "2. Como utilizamos seus dados",
+        "items": [
+          "Atender solicitações, enviar propostas e prestar suporte.",
+          "Montar, personalizar e publicar seu site conforme solicitado.",
+          "Melhorar a experiência de navegação e nossas ofertas."
+        ]
+      },
+      {
+        "title": "3. Base legal e consentimento",
+        "text": "Tratamos seus dados com base no seu consentimento e/ou em contratos/prestação de serviços, conforme a legislação aplicável (incluindo LGPD)."
+      },
+      {
+        "title": "4. Cookies e tecnologias similares",
+        "text": "Podemos usar cookies para lembrar preferências e entender o uso do site. Você pode gerenciar cookies no seu navegador. Se usarmos ferramentas de análise, elas poderão coletar dados agregados de navegação."
+      },
+      {
+        "title": "5. Compartilhamento de dados",
+        "text": "Não vendemos seus dados. Podemos compartilhar com provedores necessários à operação (ex.: hospedagem, e-mail, analytics), sempre com medidas de segurança e apenas para as finalidades aqui descritas."
+      },
+      {
+        "title": "6. Segurança da informação",
+        "text": "Adotamos medidas técnicas e organizacionais para proteger seus dados. Nenhum método é 100% infalível, mas buscamos boas práticas de mercado."
+      },
+      {
+        "title": "7. Seus direitos",
+        "text": "Você pode solicitar acesso, correção, atualização ou exclusão dos seus dados, além de revogar consentimentos. Para exercer seus direitos, entre em contato."
+      },
+      {
+        "title": "8. Contato",
+        "text": "E-mail: contato@formwise.studio"
+      },
+      {
+        "title": "9. Atualizações desta política",
+        "text": "Podemos atualizar este documento a qualquer momento. Publicaremos a nova versão nesta página.",
+        "updatedAtPrefix": "Última atualização"
+      }
+    ]
+  },
+  "Terms": {
+    "title": "Termos de Uso",
+    "intro": "Ao acessar o nosso site e/ou contratar nossos serviços, você concorda com estes Termos de Uso. Leia atentamente.",
+    "sections": [
+      {
+        "title": "1. Serviços",
+        "text": "Oferecemos templates de sites e serviços de personalização/publicação. Os detalhes do escopo, prazos e valores são definidos em proposta específica para cada projeto."
+      },
+      {
+        "title": "2. Conteúdo do cliente",
+        "text": "Você é responsável pelos conteúdos fornecidos (textos, imagens, marcas). Ao nos enviar, declara possuir os direitos necessários para uso e publicação."
+      },
+      {
+        "title": "3. Publicação e domínio",
+        "text": "Auxiliamos na publicação do site e na configuração do domínio. Custos de registro/renovação de domínio e de serviços de hospedagem/plataformas podem ser de responsabilidade do cliente, conforme combinado em proposta."
+      },
+      {
+        "title": "4. Pagamentos",
+        "text": "As condições de pagamento são definidas na proposta. Em caso de atraso, o cronograma de entrega poderá ser ajustado."
+      },
+      {
+        "title": "5. Propriedade intelectual",
+        "text": "Os templates e materiais desenvolvidos por nós são licenciados para o seu uso conforme o plano contratado. É proibida a redistribuição ou revenda não autorizada."
+      },
+      {
+        "title": "6. Limitação de responsabilidade",
+        "text": "Não nos responsabilizamos por indisponibilidades de terceiros, perdas de dados de serviços externos, ou danos indiretos decorrentes do uso do site. Empregamos esforços razoáveis para manter a qualidade e continuidade do serviço."
+      },
+      {
+        "title": "7. Cancelamento",
+        "text": "Você pode solicitar cancelamento a qualquer momento. Condições de reembolso, se houver, serão avaliadas conforme o estágio do projeto e a proposta acordada."
+      },
+      {
+        "title": "8. Alterações destes Termos",
+        "text": "Podemos atualizar estes Termos periodicamente. A versão vigente será sempre a publicada nesta página.",
+        "updatedAtPrefix": "Última atualização"
+      },
+      {
+        "title": "9. Contato",
+        "text": "Em caso de dúvidas, fale com a gente: formwisestudio@gmail.com"
+      }
+    ]
+  },
+  "Footer": {
+    "tagline": "Sites minimalistas, rápidos e bonitos — prontos para destacar seu negócio.",
+    "pages": "Páginas",
+    "contact": "Contato",
+    "legal": "Legal",
+    "social": {
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp"
+    },
+    "hours": "Seg–Sex · 09h–18h",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso",
+    "copyright": "Todos os direitos reservados.",
+    "madeIn": "Feito com ❤️ no Brasil"
+  },
+  "WhatsMini": {
+    "title": "Fale com a Formwise",
+    "open": "Abrir chat do WhatsApp",
+    "close": "Fechar chat do WhatsApp",
+    "name": "Nome",
+    "phone": "Telefone (WhatsApp)",
+    "email": "E-mail",
+    "namePh": "Como quer ser chamado(a)?",
+    "phonePh": "(11) 91234-5678",
+    "emailPh": "seu@email.com",
+    "submit": "Enviar e abrir WhatsApp",
+    "disclaimer": "Ao enviar, abriremos uma conversa no WhatsApp com seus dados preenchidos."
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "desc": "A URL que você acessou pode ter sido movida, renomeada ou não existe mais.",
+    "backHome": "Voltar ao início",
+    "viewTemplates": "Ver templates"
+  }
+}

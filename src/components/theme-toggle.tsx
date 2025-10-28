@@ -56,8 +56,6 @@ export default function ThemeToggle() {
           </motion.span>
         </AnimatePresence>
       </span>
-
-      <span className="hidden sm:inline">{theme === "dark" ? "Escuro" : "Claro"}</span>
     </button>
   );
 }
