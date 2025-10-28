@@ -1,6 +1,6 @@
 // src/app/[locale]/como-funciona/page.tsx
 import type {Metadata} from "next";
-import {getTranslations} from "next-intl/server";
+import {getTranslations, setRequestLocale} from "next-intl/server";
 import Steps from "./_components/Steps";
 import Included from "./_components/Included";
 import AddOns from "./_components/AddOns";
@@ -20,6 +20,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 export default async function HowItWorksPage({ params }: Params) {
   const { locale } = await params;
+
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "Steps" });
   const tCta = await getTranslations({ locale, namespace: "CTASection" });
 
@@ -38,7 +41,6 @@ export default async function HowItWorksPage({ params }: Params) {
         <Steps />
       </section>
 
-      {/* divisor sutil */}
       <div className="border-t border-[rgb(var(--line)/0.08)]" />
 
       <Included />

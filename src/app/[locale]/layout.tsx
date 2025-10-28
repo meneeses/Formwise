@@ -74,6 +74,7 @@ export default async function LocaleLayout({
       <ViewportVars />
       <div className="mx-auto max-w-7xl px-6">
         <Header
+          currentLocale={locale}
           right={
             <div className="flex items-center gap-2">
               <LocaleMenu current={locale} />

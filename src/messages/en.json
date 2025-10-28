@@ -456,6 +456,7 @@
     "madeIn": "Made with ❤️ in Brazil"
   },
   "WhatsMini": {
+    "defaultMsg": "Hello! I came from the Formwise Studio website 😊",
     "title": "Chat with Formwise",
     "open": "Open WhatsApp chat",
     "close": "Close WhatsApp chat",

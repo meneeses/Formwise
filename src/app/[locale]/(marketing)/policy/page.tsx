@@ -6,27 +6,28 @@ type Section =
   | {title: string; items: string[]}
   | {title: string; text: string; updatedAtPrefix?: string};
 
-type Params = {params: {locale: string}};
+type Params = { params: Promise<{locale: string}> };
 
+// Next 16: params é Promise
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Terms" });
+  const t = await getTranslations({ locale, namespace: "Policy" });
   return {
     title: `${t("title")} | Formwise Studio`,
     description: t("intro"),
   };
 }
 
-export default async function PrivacyPolicyPage({params: {locale}}: Params) {
-  const t = await getTranslations({locale, namespace: "Policy"});
+export default async function PrivacyPolicyPage({ params }: Params) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Policy" });
   const sections = t.raw("sections") as Section[];
 
-  const today = new Date();
   const formatted = new Intl.DateTimeFormat(locale, {
     day: "2-digit",
     month: "2-digit",
     year: "numeric"
-  }).format(today);
+  }).format(new Date());
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-12">
@@ -50,16 +51,16 @@ export default async function PrivacyPolicyPage({params: {locale}}: Params) {
                 ))}
               </ul>
             ) : (
-              <p className="mt-2 text-[rgb(var(--muted))]">{sec.text}</p>
-            )}
-
-            {/* só mostra “Última atualização” se a seção fornecer a chave */}
-            {"updatedAtPrefix" in sec && sec.updatedAtPrefix && (
-              <p className="mt-2 text-[rgb(var(--muted))]">
-                <span className="text-xs">
-                  {sec.updatedAtPrefix}: {formatted}.
-                </span>
-              </p>
+              <>
+                <p className="mt-2 text-[rgb(var(--muted))]">{sec.text}</p>
+                {sec.updatedAtPrefix && (
+                  <p className="mt-2 text-[rgb(var(--muted))]">
+                    <span className="text-xs">
+                      {sec.updatedAtPrefix}: {formatted}.
+                    </span>
+                  </p>
+                )}
+              </>
             )}
           </section>
         ))}
