@@ -17,16 +17,15 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-// ⬇️ params é síncrono e amplo ({ locale: string })
+// ⬇️ Aqui o Next (no seu setup) espera params como Promise<{ locale: string }>
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const localeParam = params.locale;
+  const { locale: localeParam } = await params;
 
-  // valida sem quebrar a compatibilidade com Next
-  const locale: Locale | null = locales.includes(localeParam as Locale)
+  const locale = (locales as readonly string[]).includes(localeParam)
     ? (localeParam as Locale)
     : null;
 
@@ -35,7 +34,7 @@ export async function generateMetadata({
     try {
       messages = (await import(`@/messages/${locale}.json`)).default;
     } catch {
-      // sem mensagens, usamos metas padrão
+      // mantém meta padrão se não houver arquivo
     }
   }
 
@@ -43,23 +42,23 @@ export async function generateMetadata({
   return {
     title: meta.title ?? "Formwise Studio",
     description:
-      meta.description ?? "Templates modernos para sites, prontos para personalizar.",
+      meta.description ??
+      "Templates modernos para sites, prontos para personalizar.",
   };
 }
 
-// ⬇️ params é síncrono e com { locale: string }
+// ⬇️ Também Promise aqui
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const localeParam = params.locale;
+  const { locale: localeParam } = await params;
 
-  if (!locales.includes(localeParam as Locale)) {
-    // evitar notFound no root layout; aqui é layout de segmento, é seguro.
-    notFound();
+  if (!(locales as readonly string[]).includes(localeParam)) {
+    notFound(); // aqui é layout de segmento ([locale]), pode usar
   }
   const locale = localeParam as Locale;
 
