@@ -3,27 +3,34 @@
 
 import {useEffect, useRef, useState} from "react";
 import {Link, usePathname} from "@/i18n/navigation";
+import {useTranslations, useLocale} from "next-intl";
 import LocaleMenu from "@/components/locale-menu";
 import ThemeToggle from "@/components/theme-toggle";
 import type {Locale} from "@/i18n/config";
 
-const NAV = [
-  { href: "/", label: "Início" },
-  { href: "/how-it-works", label: "Como funciona" },
-  { href: "/templates", label: "Templates" },
-  { href: "/pricing", label: "Preços & Licenças" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contato" },
+// Em vez de labels fixas, guardamos só as chaves de tradução
+// e os hrefs canônicos (o Link do seu i18n/navigation resolve para o locale atual)
+const NAV: {href: string; key: `home`|`how`|`templates`|`pricing`|`faq`|`contact`}[] = [
+  { href: "/",              key: "home"      },
+  { href: "/how-it-works",  key: "how"       },
+  { href: "/templates",     key: "templates" },
+  { href: "/pricing",       key: "pricing"   },
+  { href: "/faq",           key: "faq"       },
+  { href: "/contact",       key: "contact"   },
 ];
 
 export default function Header({
   currentLocale,
   right
 }: {
-  currentLocale: Locale;   // <-- NOVO
+  currentLocale: Locale;
   right?: React.ReactNode;
 }) {
+  const t = useTranslations("Header");
+  const tCommon = useTranslations("Common");
+  const locale = useLocale();
   const pathname = usePathname();
+
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -47,11 +54,21 @@ export default function Header({
     "opacity-80 hover:opacity-100 transition relative after:absolute after:-bottom-2 after:left-0 after:h-[2px] " +
     "after:w-0 after:bg-[rgb(var(--accent))] hover:after:w-full after:transition-[width] after:duration-200";
 
+  // helper para estado "ativo" mais tolerante (localização, subrotas, query)
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-[rgb(var(--bg))]/80 backdrop-blur supports-[backdrop-filter]:bg-[rgb(var(--bg))]/70 border-b border-[rgb(var(--fg)/0.06)] transition-colors duration-300">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 py-2.5 md:py-4">
-        {/* Wordmark — menor no mobile */}
-        <Link href="/" aria-label="Formwise Studio — Início" className="inline-flex items-baseline gap-1">
+        {/* Wordmark — aria-label traduzida */}
+        <Link
+          href="/"
+          aria-label={`Formwise Studio — ${t("home")}`}
+          className="inline-flex items-baseline gap-1"
+        >
           <span className="text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight">Formwise</span>
           <span className="text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight text-[rgb(var(--accent))]">Studio</span>
           <span className="text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight text-[rgb(var(--accent))]">.</span>
@@ -60,30 +77,31 @@ export default function Header({
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-6 text-sm">
           {NAV.map((item) => {
-            const active = pathname === item.href;
+            const active = isActive(item.href);
             return (
-              <Link key={item.href} href={item.href} className={`${linkBase} ${active ? "opacity-100 after:w-full" : ""}`}>
-                {item.label}
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`${linkBase} ${active ? "opacity-100 after:w-full" : ""}`}
+              >
+                {t(item.key)}
               </Link>
             );
           })}
         </nav>
 
-        {/* Right: mobile mostra Language + hamburger; ThemeToggle só no desktop */}
+        {/* Right */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Language SEMPRE visível e com locale correto */}
           <LocaleMenu current={currentLocale} />
-
-          {/* Theme no desktop */}
           <div className="hidden md:block">
             <ThemeToggle />
           </div>
 
-          {/* Hamburguer (mobile) */}
+          {/* Hamburger (mobile) — aria em i18n */}
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg ring-1 ring-[rgb(var(--fg)/0.12)] hover:ring-[rgb(var(--fg)/0.2)] active:scale-[.98] transition lg:hidden"
-            aria-label="Abrir menu"
+            aria-label={open ? t("mobileMenu.close") : t("mobileMenu.open")}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
@@ -104,14 +122,13 @@ export default function Header({
         className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"}`}
       >
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 py-4">
-          {/* ThemeToggle dentro do menu mobile */}
           <div className="mb-3">
             <ThemeToggle />
           </div>
 
           <ul className="grid gap-2">
             {NAV.map((item) => {
-              const active = pathname === item.href;
+              const active = isActive(item.href);
               return (
                 <li key={item.href}>
                   <Link
@@ -123,7 +140,7 @@ export default function Header({
                     `}
                   >
                     <span className={`relative inline-block ${active ? "after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-[2px] after:bg-[rgb(var(--accent))]" : ""}`}>
-                      {item.label}
+                      {t(item.key)}
                     </span>
                   </Link>
                 </li>
@@ -136,7 +153,7 @@ export default function Header({
               href="/contact"
               className="inline-flex w-full items-center justify-center rounded-xl px-4 py-2 text-sm font-medium bg-[rgb(var(--brand))] text-white hover:brightness-95 transition"
             >
-              Falar com a Formwise
+              {tCommon("contactUs")}
             </Link>
           </div>
         </nav>
